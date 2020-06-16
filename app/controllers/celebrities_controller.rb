@@ -9,6 +9,10 @@
     
     #Show a single celebrity
     def show
+      id = params[:id].to_i - 1
+      p id
+       @celebrity = @celebrities[id]
+      #  render json: @celebrity
     end
     
     #Create a new celebrity
@@ -17,10 +21,19 @@
     
     #Update a celebrity
     def update
+       id = params[:id].to_i - 1
+      p id
+      @celebrities[id]["name"] = params["name"]
+      @celebrities[id]["notability"] = params["notability"]
+      render json: @celebrities
     end
     
     #Remove a celebrity
     def destroy
+       id = params[:id].to_i - 1
+      p id
+      @celebrities.delete_at(id) 
+      render json: @celebrities
     end
 
     private
