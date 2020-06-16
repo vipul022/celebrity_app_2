@@ -4,6 +4,7 @@
     
     #Show all celebrities
     def index
+      
     end
     
     #Show a single celebrity
