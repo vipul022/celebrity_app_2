@@ -1,6 +1,9 @@
+
+
+<%= render partial: "shared/top_nav", locals: {celebrities: @celebrities} %>
 <h1>Hello World</h1>
 
 <% @celebrities.each do |celebrity| %>
-   <h3><%= celebrity["name"] %></h3>
-   <p><%= celebrity["notability"] %></p>
+   <div class="celeb"><h3><%= celebrity["name"] %></h3>
+   <p><%= celebrity["notability"]%></p> </div>
 <% end %>

@@ -1,0 +1,10 @@
+
+
+
+<ul>
+  <li><%= link_to("Home", root_path) %></li>
+  <% celebrities.each do |celebrity| %>
+  
+      <li><%= link_to(celebrity["name"], celebrity_path(celebrity["id"]))%></li>
+  <% end %>
+</ul>

@@ -10,7 +10,8 @@
     #Show a single celebrity
     def show
       id = params[:id].to_i - 1
-      p id
+      p params
+      p @celebrities
        @celebrity = @celebrities[id]
       #  render json: @celebrity
     end
@@ -39,10 +40,11 @@
     private
     def setup_data
         session[:celebrities] = [
-            { "name" => "Lindsay Lohan", "notability" => "Parent Trap" },
-            { "name" => "Adam Sandler", "notability" => "Big Daddy" },
-            { "name" => "Rob Schnider", "notability" => "Adam Sandler" }
-        ] unless session[:celebrities]
+            { "id" => 1,"name" => "Lindsay Lohan", "notability" => "Parent Trap" },
+            { "id" => 2,"name" => "Adam Sandler", "notability" => "Big Daddy" },
+            { "id" => 3,"name" => "Rob Schnider", "notability" => "Adam Sandler" }
+        ] 
+        # unless session[:celebrities]
     
         @celebrities = session[:celebrities]
     end
