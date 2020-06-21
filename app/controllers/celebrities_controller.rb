@@ -10,8 +10,8 @@
     #Show a single celebrity
     def show
       id = params[:id].to_i - 1
-      p params
-      p @celebrities
+      # p params
+      # p @celebrities
        @celebrity = @celebrities[id]
       #  render json: @celebrity
     end
